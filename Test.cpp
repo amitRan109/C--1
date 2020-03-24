@@ -114,12 +114,46 @@ TEST_CASE("Test replacement of s and z") { //10
 }
 
 TEST_CASE("Test replacement of d and t") {
+     string text = "Dont Told";
+    CHECK(find(text, "Dont") == string("Dont"));
+    CHECK(find(text, "Dond") == string("Dont"));
+    CHECK(find(text, "tont") == string("Dont"));
+    CHECK(find(text, "tond") == string("Dont"));
+    
+    CHECK(find(text, "Told") == string("Told"));
+    CHECK(find(text, "tolt") == string("Told"));
+    CHECK(find(text, "dold") == string("Told"));
+    CHECK(find(text, "dolt") == string("Told"));
+    CHECK(find(text, "DolD") == string("Told"));
+    CHECK(find(text, "TolT") == string("Told"));
+
 }
 
 TEST_CASE("Test replacement of o and u") {
+     string text = "You xxx out";
+    CHECK(find(text, "You") == string("You"));
+    CHECK(find(text, "YUO") == string("You"));
+    CHECK(find(text, "Yuu") == string("You"));
+    CHECK(find(text, "Yoo") == string("You"));
+    
+    CHECK(find(text, "out") == string("out"));
+    CHECK(find(text, "uot") == string("out"));
+    CHECK(find(text, "oot") == string("out"));
+    CHECK(find(text, "uut") == string("out"));
+   
 }
 
 TEST_CASE("Test replacement of i and y") {
+      string text = "ivgeny yyy lili";
+    CHECK(find(text, "ivgeny") == string("ivgeny"));
+    CHECK(find(text, "yvgeny") == string("ivgeny"));
+    CHECK(find(text, "ivgeni") == string("ivgeny"));
+    CHECK(find(text, "yvgeni") == string("ivgeny"));
+    
+    CHECK(find(text, "lili") == string("lili"));
+    CHECK(find(text, "lyli") == string("lili"));
+    CHECK(find(text, "lyly") == string("lili"));
+    CHECK(find(text, "lily") == string("lili"));
 }
 
 
@@ -130,9 +164,29 @@ TEST_CASE("Test replacement of lower-case and upper-case") {
     CHECK(find(text, "Happi") == string("Happi"));
     CHECK(find(text, "HAPPI") == string("Happi"));
     CHECK(find(text, "HaPpI") == string("Happi"));
-    /* Add more checks here */
+    
+}
+TEST_CASE("Test replacement of lower-case and upper-case") {
+    string text = "xxx yyy Worry";
+    CHECK(find(text, "worry") == string("Worry"));
+    CHECK(find(text, "Worry") == string("Worry"));
+    CHECK(find(text, "WORRY") == string("Worry"));
+    CHECK(find(text, "WoRrY") == string("Worry"));
 }
 
 TEST_CASE("Test many replacement in one word") {
+    string text = "Luka doncic";
+    CHECK(find(text, "Luka") == string("Luka "));
+    CHECK(find(text, "loca") == string("Luka "));
+    CHECK(find(text, "Luqa") == string("Luka "));
+    CHECK(find(text, "loQa") == string("Luka ")); 
+
+    CHECK(find(text, "doncic") == string("doncic "));
+    CHECK(find(text, "tunkyq") == string("doncic "));
+    CHECK(find(text, "Donkyk") == string("doncic "));
+    CHECK(find(text, "TunQik") == string("doncic "));
+    CHECK(find(text, "tuncic") == string("doncic "));
+    CHECK(find(text, "tuncyc") == string("doncic "));
+    
 }
 
