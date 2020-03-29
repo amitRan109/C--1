@@ -176,17 +176,17 @@ TEST_CASE("Test replacement of lower-case and upper-case") {
 
 TEST_CASE("Test many replacement in one word") {
     string text = "Luka doncic";
-    CHECK(find(text, "Luka") == string("Luka "));
-    CHECK(find(text, "loca") == string("Luka "));
-    CHECK(find(text, "Luqa") == string("Luka "));
-    CHECK(find(text, "loQa") == string("Luka ")); 
+    CHECK(find(text, "Luka") == string("Luka"));
+    CHECK(find(text, "loca") == string("Luka"));
+    CHECK(find(text, "Luqa") == string("Luka"));
+    CHECK(find(text, "loQa") == string("Luka")); 
 
-    CHECK(find(text, "doncic") == string("doncic "));
-    CHECK(find(text, "tunkyq") == string("doncic "));
-    CHECK(find(text, "Donkyk") == string("doncic "));
-    CHECK(find(text, "TunQik") == string("doncic "));
-    CHECK(find(text, "tuncic") == string("doncic "));
-    CHECK(find(text, "tuncyc") == string("doncic "));
+    CHECK(find(text, "doncic") == string("doncic"));
+    CHECK(find(text, "tunkyq") == string("doncic"));
+    CHECK(find(text, "Donkyk") == string("doncic"));
+    CHECK(find(text, "TunQik") == string("doncic"));
+    CHECK(find(text, "tuncic") == string("doncic"));
+    CHECK(find(text, "tuncyc") == string("doncic"));
     
 }
 
